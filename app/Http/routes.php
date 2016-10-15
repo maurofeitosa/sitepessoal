@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['prefix'=>'api'],function(){
+	Route::group(['prefix'=>'usuario'],function(){
+
+		Route::get('',['uses'=>'UsuarioController@lista']);
+
+	});
+});
